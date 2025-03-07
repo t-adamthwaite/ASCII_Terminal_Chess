@@ -1,136 +1,163 @@
- {|||||||}
- (---Q---)
-  \--Q--/
-   \-Q-/
-   /[Q]\
-  /|[Q]|\
- /||[Q]||\
-/|||||||||\    (12x8char - "color" queen piece)
+ _________________
+|                 |
+|    {|||||||}    |
+|    (---Q---)    |
+|     \--Q--/     |
+|      \-Q-/      |
+|      /[Q]\      |
+|     /|[Q]|\     |
+|    /||[Q]||\    |
+|   /|||||||||\   | (20x10char - "color" queen piece)
 
 
-
- {|||||||}
- (       )
-  \  Q  /
-   \ Q /
-   / Q \
-  /  Q  \
- /   Q   \
-/_________\    (12x8char - "white" queen piece)
-
-
-      
-     +
- {===|===}
- /---K---\
- |---K---|
-  \--K--/
-  ||[K]||
-  /|[K]|\
- /||[K]||\
-|||||||||||     (12x9char - "color" king piece)
+ _________________
+|                 |
+|    {|||||||}    |
+|    (       )    |
+|     \  Q  /     |
+|      \ Q /      |
+|      / Q \      |
+|     /  Q  \     |
+|    /   Q   \    |
+|   /_________\   | (20x10char - "white" queen piece)
 
 
-
-     +
- {===|===}
- /       \
- |   K   |
-  \  K  /
-  ||[K]||
-  /  K  \
- /   K   \
-|_________|     (12x9char - "white" king piece)
-
-
+ _________________     
+|        +        |
+|    {===|===}    |
+|    /---K---\    |
+|    |---K---|    |
+|     \--K--/     |
+|     ||[K]||     |
+|     /|[K]|\     |
+|    /||[K]||\    |
+|   |||||||||||   |  (20x10char - "color" king piece)
 
 
-
-   {_i_}
-   /=P=\
-  |==P==|
-   \=P=/
- ___|P|___
-/=========\     (12x6char - "color" pawn piece) (.format(_i_ = ColorPawn.number)
+ _________________
+|        +        |
+|    {===|===}    |
+|    /       \    |
+|    |   K   |    |
+|     \  K  /     |
+|     ||[K]||     |
+|     /  K  \     |
+|    /   K   \    |
+|   |_________|   |   (20x10char - "white" king piece)
 
 
 
 
-   {_i_}
-   /   \
-  |  P  |
-   \_P_/
- ___|P|___
-/_________\     (12x6char - "white" pawn piece) (.format as above but for WhitePawn)
+
+ _________________
+|                 |
+|                 |
+|                 |
+|      {_i_}      |
+|      /===\      |
+|     |==P==|     |
+|      \=P=/      |
+|    ___|P|___    |
+|   /=========\   |     (20x10char - "color" pawn piece) (.format(_i_ = ColorPawn.number)
+
+
+ _________________
+|                 |
+|                 |
+|                 |
+|      {_i_}      |
+|      /   \      |
+|     |  P  |     |
+|      \_P_/      |
+|    ___|P|___    |
+|   /_________\   |     (20x10char - "white" pawn piece) (.format as above but for WhitePawn)
    
 
 
 
 
- _ _{ i }_ _
-| | | | | |
-\ | |R| | /
- \| |R| |/
-  | |R| |
- _| |R| |_
-|=========|     (12x7 - "color" rook piece) (.format as above for ColorRook)
+ _________________
+|                 |
+|                 |
+|    _ _{ i }_ _  |
+|   | | | | | |   |
+|   \ | | | | /   |
+|    \ | R | /    |
+|     || R ||     |
+|    _|| R ||_    |
+|   |_|_|_|_|_|   |     (20x10 - "color" rook piece) (.format as above for ColorRook)
+
+ _________________
+|                 |
+|                 |
+|    _ _{ i }_ _  |
+|   | | | | | |   |
+|   \         /   |
+|    \   R   /    |
+|     |  R  |     |
+|    _|  R  |_    |
+|   |_________|   |   (20X10 - "white" rook piece) (.format as above for WhiteRook)
+
+
+ _________________
+|      {(i)}      |
+|       /|\       |
+|      /~+~\      |
+|      \~+~/      |
+|       \|/       |
+|       /B\       |
+|      |~B~|      |
+|     _|~B~|_     |
+|    |~~~~~~~|    |  (20x10 - "color" bishop piece) (.format as above for ColorBishop)
+
+
+ _________________
+|      {(i)}      |
+|       /|\       |
+|      / + \      |
+|      \ + /      |
+|       \|/       |
+|       /B\       |
+|      | B |      |
+|     _| B |_     |
+|    |_______|    |   (20x10 - "white" bishop piece) (.format as above for WhiteBishop)
+
+
+
+ _________________
+|                 |
+|      __{i}_     |
+|     ///0+\___   |
+|    ///+++++o+\  |
+|    \\\+++++++/  |
+|    _\\[K]|      |
+|   /+++[K]+\     |
+|  |++++[K]++|_   |
+|  |+++++++++++|  |   (20x10 - "color" knight piece) (.format as above for ColorKnight)
+
+
+
+ _________________
+|                 |
+|      __{i}_     |
+|     ///0+\___   |
+|    ///     o \  |
+|    \\\    ___/  |
+|    _\\\K |      |
+|   /    K  \     |
+|  |     K   |_   |
+|  |___________|  |  (20x10 - "white" knight piece) (.format as above for WhiteKnight)
 
 
 
 
- _ _{ i }_ _
-| | | | | |
-\         /
- \   R   /
-  |  R  |
- _|  R  |_
-|_________|     (12x7 - "white" rook piece) (.format as above for WhiteRook)
-
-
-
-  {(i)}
-   /|\
-  /~+~\
-  \~+~/
-   \|/
-   /B\
-  |~B~|
- _|~B~|_
-|~~~~~~~|       (10x9 - "color" bishop piece) (.format as above for ColorBishop)
-
-
-
-
-  {(i)}
-   /|\
-  / + \
-  \ + /
-   \|/
-   /B\
-  | B |
- _| B |_
-|_______|       (10x9 - "white" bishop piece) (.format as above for WhiteBishop)
-
-
-
-
-    __{i}_
-   ///0+\___
-  ///+++++o+\
-  \\\+++++++/
-  _\\[K]|
- /+++[K]+\
-|++++[K]++|_
-|+++++++++++|   (14x8 - "color" knight piece) (.format as above for ColorKnight)
-
-
-
-
-    __{i}_
-   ///0 \___
-  ///     o \
-  \\\    ___/
-  _\\\K |
- /    K  \
-|     K   |_
-|___________|   (14x8 - "white" knight piece) (.format as above for WhiteKnight)
+ _________________ 
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |
+|                 |  (20x10 Empty Space tile)
