@@ -24,8 +24,8 @@ class Board:
     def __str__(self):
         return str(self.row0) + '\n\n' + str(self.rowA) + '\n\n' + str(self.rowB) + '\n\n' + str(self.rowC) + '\n\n' + str(self.rowD) + '\n\n' + str(self.rowE) + '\n\n' + str(self.rowF) + '\n\n' + str(self.rowG) + '\n\n' + str(self.rowH)
     
-    def starting(self, minus_pawns):
-        self.rowA["A"] = ['-R-', '-N-', '-B-', '-Q-', '-K-', '-B-', '-N-', '-R-']
+    def starting(self, minus_pawns, starting_row_a):
+        self.rowA["A"] = starting_row_a
         self.rowB["B"] = minus_pawns
         for i in range (0, 8):
             self.rowG["G"][i] = '+P+'
@@ -45,12 +45,13 @@ class Board:
         #else:
           #  print("Piece not on board.")
 
-    def move(self, piece_id = input(["Piece id: "])):
+    def move(self):
         board_dict = self.rowA | self.rowB | self.rowC | self.rowD | self.rowE | self.rowF | self.rowG | self.rowH
+        piece_id = input(["Piece id: "])
         current_position = Board.location(self, piece_id)
         if Board.location(self, piece_id)[2]:
             print(current_position)
-            new_position_key = input(["New Row"])
+            new_position_key = input(["New Row"]).upper()
             new_position_index = int(input(["New Column"]))-1
             for key, list in board_dict.items():
                 for item in list:
@@ -73,5 +74,57 @@ class MinusPawn:
     def __str__(self):
         return self.id
     
+class MinusRook:
+    rook_count = 0
+    text = '-R'
+    def __init__(self, first_move = False):
+        MinusRook.rook_count += 1
+        self.id = MinusRook.text + str(MinusRook.rook_count)
+        self.first_move = first_move
+    
+    def __str__(self):
+        return self.id
+    
+class MinusKnight:
+    knight_count = 0
+    text = '-N'
+    def __init__(self, first_move = False):
+        MinusKnight.knight_count += 1
+        self.id = MinusKnight.text + str(MinusKnight.knight_count)
+        self.first_move = first_move
+    
+    def __str__(self):
+        return self.id
 
+class MinusBishop:
+    bishop_count = 0
+    text = '-B'
+    def __init__(self, first_move = False):
+        MinusBishop.bishop_count += 1
+        self.id = MinusBishop.text + str(MinusBishop.bishop_count)
+        self.first_move = first_move
+    
+    def __str__(self):
+        return self.id
 
+class MinusQueen:
+    queen_count = 0
+    text = '-Q-'
+    def __init__(self, first_move = False):
+        MinusQueen.queen_count += 1
+        self.id = MinusQueen.text
+        self.first_move = first_move
+    
+    def __str__(self):
+        return self.id
+    
+class MinusKing:
+    king_count = 0
+    text = '-K-'
+    def __init__(self, first_move = False):
+        MinusKing.king_count += 1
+        self.id = MinusKing.text
+        self.first_move = first_move
+    
+    def __str__(self):
+        return self.id
