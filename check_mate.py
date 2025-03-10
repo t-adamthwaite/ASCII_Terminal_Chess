@@ -15,5 +15,7 @@ board.starting(minus_pawns)
 #print(str(board))
 #print(str(board.rowA["A"][0]))
 
-#board.location("-P3")
+#print(board.location("-P3"))
+board.move()
+print(str(board))
 

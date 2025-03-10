@@ -1,5 +1,7 @@
 class Board:
 
+    current_position = []
+
     def __init__(self, row0 = {}, rowA = {}, rowB = {}, rowC = {}, rowD = {}, rowE = {}, rowF = {}, rowG = {}, rowH = {}):
         self.row0 = {" ": ['_1_', '_2_', '_3_', '_4_', '_5_', '_6_', '_7_', '_8_']}
 
@@ -36,10 +38,28 @@ class Board:
         for key, list in board_dict.items():
             for item in list:
                 if item == piece_id:
-                    print("Piece is located in Row {CHAR}, column {NUM}.".format(CHAR = key, NUM = list.index(item)+1))
-                    return True
+                    #print("Piece is located in Row {CHAR}, column {NUM}.".format(CHAR = key, NUM = list.index(item)+1))
+                    current_position = [key, list.index(item)+1, True]
+                    #print(temp_list[2])
+                    return current_position
         #else:
           #  print("Piece not on board.")
+
+    def move(self, piece_id = input(["Piece id: "])):
+        board_dict = self.rowA | self.rowB | self.rowC | self.rowD | self.rowE | self.rowF | self.rowG | self.rowH
+        current_position = Board.location(self, piece_id)
+        if Board.location(self, piece_id)[2]:
+            print(current_position)
+            new_position_key = input(["New Row"])
+            new_position_index = int(input(["New Column"]))-1
+            for key, list in board_dict.items():
+                for item in list:
+                    if item == piece_id:
+                        board_dict[key][list.index(piece_id)] = "___"
+                for item in list:
+                    board_dict[new_position_key][new_position_index] = piece_id
+
+
 
 
 class MinusPawn:
@@ -53,8 +73,5 @@ class MinusPawn:
     def __str__(self):
         return self.id
     
-    def move(self):
-        piece_id = input(["Piece id: "])
-        if Board.location(piece_id) == True:
-            print('hello')
+
 
