@@ -85,24 +85,40 @@ print(board)
 
 #Game Loop
 while (board.location('+K+')[2] == True) and (board.location('-K-')[2] == True):
+
     player1.turn = "Yes"
     if (player1.turn == "Yes") and (player2.turn =="No"):
         print("Player 1, it is your turn. Input 'y' to move. ")
+
     i = input(["Player 1, it is your turn. Input 'y' to move. "])
     if i == "y":
         board.move()
         clear_console()
         print(board)
         player1.turn = "No"
+
+        if board.location('+K+') == False:
+            print("Congradulations Player 1, you have won!")
+            break
+        else:
+            pass
+
     player2.turn = "Yes"
     if (player2.turn == "Yes") and (player1.turn == "No"):
         print("Player 2, it is your turn. Input 'y' to move ")
+
     i = input(["Player 2, it is your turn. Input 'y' to move. "])
     if i == "y":
         board.move()
         clear_console()
         print(board)
         player2.turn = "No"
+
+        if board.location('-K-') == False:
+            print("Congradulations Player 2, you have won!")
+            break
+        else:
+            pass
 
 
 #board.move()

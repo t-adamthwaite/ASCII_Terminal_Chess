@@ -41,6 +41,8 @@ class Board:
                     current_position = [key, list.index(item)+1, True]
                     #print(temp_list[2])
                     return current_position
+        else:
+            return False
         #else:
           #  print("Piece not on board.")
 
