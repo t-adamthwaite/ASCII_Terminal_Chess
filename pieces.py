@@ -196,4 +196,4 @@ class PlusKing:
     
 
 class Player:
-    turn = False
+    turn = "No"

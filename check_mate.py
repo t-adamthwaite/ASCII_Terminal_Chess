@@ -1,6 +1,6 @@
 import pieces as p
 import os
-import keyboard as k
+
 def clear_console():
     os_name = os.name
     if os_name == 'posix': # For macOS and Linux
@@ -85,13 +85,25 @@ print(board)
 
 #Game Loop
 while (board.location('+K+')[2] == True) and (board.location('-K-')[2] == True):
-    player1.turn == True
-    if player1.turn == True:
-        print("Player 1, it is your turn.")
+    player1.turn = "Yes"
+    if (player1.turn == "Yes") and (player2.turn =="No"):
+        print("Player 1, it is your turn. Input 'y' to move. ")
+    i = input(["Player 1, it is your turn. Input 'y' to move. "])
+    if i == "y":
         board.move()
         clear_console()
         print(board)
-        player1.turn == False
+        player1.turn = "No"
+    player2.turn = "Yes"
+    if (player2.turn == "Yes") and (player1.turn == "No"):
+        print("Player 2, it is your turn. Input 'y' to move ")
+    i = input(["Player 2, it is your turn. Input 'y' to move. "])
+    if i == "y":
+        board.move()
+        clear_console()
+        print(board)
+        player2.turn = "No"
+
 
 #board.move()
 
