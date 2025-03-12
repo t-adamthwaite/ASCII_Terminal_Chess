@@ -44,13 +44,13 @@ class Board:
 
     def move(self):
         board_dict = self.rowA | self.rowB | self.rowC | self.rowD | self.rowE | self.rowF | self.rowG | self.rowH
-        piece_id = input(["Piece id: "])
+        piece_id = input("Piece id: ")
         current_position = Board.location(self, piece_id)
 
         if Board.location(self, piece_id)[2]:
             print(current_position)
-            new_position_key = input(["New Row"]).upper()
-            new_position_index = int(input(["New Column"]))-1
+            new_position_key = input("New Row: ").upper()
+            new_position_index = int(input("New Column: "))-1
             for key, list in board_dict.items():
                 for item in list:
                     if item == piece_id:
