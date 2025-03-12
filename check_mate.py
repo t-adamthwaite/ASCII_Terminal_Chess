@@ -80,25 +80,52 @@ starting_row_h = [plus_rooks[0], plus_knights[0], plus_bishops[0], plus_queen[0]
 
 board.starting(minus_pawns, starting_row_a, plus_pawns, starting_row_h)
 
+#Display welcome message
+print("""\n\n\n===============    ============    =============         =====  =  =====       ==============    ===      =====       =======        ====
+===============    ============    =============        =====  = =  =====      ==============    ===     ======     ===========      ====
+    ======         ====            ====     ====       =====  == ==  =====          ====         ===    === ===    ====      ====    ====
+    ======         =========       ====     ====      =====  === ===  =====         ====         ===   ===  ===    ====      ====    ====
+    ======         =========       ===========        =====  === ===  =====         ====         ===  ===   ===    ==============    ====
+    ======         ====            ============       =====  === ===  =====         ====         === ===    ===    ==============    ====
+    ======         ============    =====   =====      =====  === ===  =====    ==============    =====      ===    ====      ====    ============
+    ======         ============    =====     =====    =====  ==   ==  =====    ==============    ====       ===    ====      ====    ============
+
+                                   ============    ====    ====    ============    ============    ============
+                                   ============    ====    ====    ============    ============    ============
+                                   ===             ====    ====    ====              =====           =====
+                                   ===             ============    =========          =====           =====
+                                   ===             ============    =========           =====           =====
+                                   ===             ====    ====    ====                  =====           =====
+                                   ============    ====    ====    ============    =============    ============
+                                   ============    ====    ====    ============    =============    ============\n\n\n""")
+
+j = input("Input 's' to start! ")
+if j == 's':
+    clear_console()
+
 #Display starting board
 print(board)
+print('\n\n')
 
 #Game Loop
 while (board.location('+K+')[2] == True) and (board.location('-K-')[2] == True):
 
     player1.turn = "Yes"
+    player2.turn = "No"
+
     if (player1.turn == "Yes") and (player2.turn =="No"):
         print("Player 1, it is your turn. Input 'y' to move. ")
 
-    i = input(["Player 1, it is your turn. Input 'y' to move. "])
+    i = input("Player 1, it is your turn. Input 'y' to move. ")
     if i == "y":
         board.move()
         clear_console()
         print(board)
+        print('\n\n')
         player1.turn = "No"
 
         if board.location('+K+') == False:
-            print("Congradulations Player 1, you have won!")
+            print("Congratulations Player 1, you have won!")
             break
         else:
             pass
@@ -107,21 +134,16 @@ while (board.location('+K+')[2] == True) and (board.location('-K-')[2] == True):
     if (player2.turn == "Yes") and (player1.turn == "No"):
         print("Player 2, it is your turn. Input 'y' to move ")
 
-    i = input(["Player 2, it is your turn. Input 'y' to move. "])
+    i = input("Player 2, it is your turn. Input 'y' to move. ")
     if i == "y":
         board.move()
         clear_console()
         print(board)
+        print('\n\n')
         player2.turn = "No"
 
         if board.location('-K-') == False:
-            print("Congradulations Player 2, you have won!")
+            print("Congratulations Player 2, you have won!")
             break
         else:
             pass
-
-
-#board.move()
-
-#print(str(board))
-#print(board)
